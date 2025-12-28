@@ -4,7 +4,7 @@ using System;
 
 public class MainManager : MonoBehaviour
 {
-    public static MainManager Instance;
+    public static MainManager Instance {get;private set;}
     public Color TeamColor;
 
     private void Awake()
@@ -18,6 +18,8 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         LoadColor();
+
+        //MainManager.Instance = null;
     }
 
     [System.Serializable]
